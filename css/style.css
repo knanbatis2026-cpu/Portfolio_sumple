@@ -1,9 +1,11 @@
 @charset "UTF-8";
 
 :root{
-    --main-color: #00ff00;
+    --main-color: white;
+    --sub-color: #00ff00;
     --bg-color: black;
     --text-main-color: #00ff00;
+    --text-header-color: white;
     --text-sub-color: white;
     --text-hl-color: #007bff;
 }
@@ -47,6 +49,10 @@ img {
     max-width: 100%;
 }
 
+h1,h2,h3,h4{
+    color: var(--text-header-color);
+}
+
 /* レイアウト */
 .wrapper {
     max-width: 1120px;
@@ -84,12 +90,12 @@ img {
     display: inline-block;
     font-size: 1.25rem;
     color: #fff;
-    border: 5px dashed var(--main-color);
+    border: 5px dashed var(--sub-color);
     padding: 0.75rem 2rem;
     transition: 0.3s;
 }
 .btn:hover {
-    background-color: rgb(from var(--main-color) r g b / 0.5);
+    background-color: rgb(from var(--sub-color) r g b / 0.5);
     text-decoration: none;
     color: #fff;
 }
@@ -273,7 +279,7 @@ img {
 .page-footer {
     background-color: var(--bg-color); /* ダークトーンの背景画像からシンプルなライトグレーに変更 */
     padding-top: 4rem;
-    border-top: 1px dashed var(--main-color);
+    border-top: 1px dashed var(--sub-color);
 }
 .page-footer .heading-large {
     font-size: 2rem;
@@ -287,7 +293,7 @@ img {
 }
 .info th,
 .info td {
-    border-bottom: 1px dashed var(--main-color);
+    border-bottom: 1px dashed var(--sub-color);
 }
 .info th {
     text-align: left;
@@ -339,7 +345,7 @@ img {
     .sidebar .heading-medium {
         text-align: left;
         margin-bottom: 1rem;
-        border-bottom: 2px dashed var(--main-color);
+        border-bottom: 2px dashed var(--sub-color);
         padding-bottom: 0.5rem;
     }
 
