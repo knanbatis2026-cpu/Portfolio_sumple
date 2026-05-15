@@ -1,2 +1,2 @@
-# Portfolio_sumple
+# Portfolio_sample
 ポートフォリオのサンプル
