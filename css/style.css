@@ -45,7 +45,6 @@ a:hover {
 }
 img {
     max-width: 100%;
-    text-align: center;
 }
 
 /* レイアウト */
@@ -123,6 +122,10 @@ img {
 .main-nav a:hover {
     color: #007bff;
     text-decoration: none;
+}
+
+.header-image{
+    text-align: center;
 }
 
 /* ヘッダーカバー画像
