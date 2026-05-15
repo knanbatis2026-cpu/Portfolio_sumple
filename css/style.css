@@ -1,0 +1,347 @@
+@charset "UTF-8";
+
+:root{
+    --main-color: #00ff00;
+    --bg-color: black;
+    --text-main-color: #00ff00;
+    --text-sub-color: white;
+    --text-hl-color: #007bff;
+}
+
+/* アニメーションの時間を指定 */
+::view-transition-group(root) {
+  animation-duration: 1s;
+}
+
+/* カスタムアニメーション（任意） */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+::view-transition-new(root) {
+  animation: fade-in 0.5s ease-in;
+}
+
+
+/* 共通部分
+------------------------------- */
+html {
+    font-size: 100%;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+}
+body {
+    font-family: "consoles";
+    line-height: 1.7;
+    color: --main-color; /* カフェのブラウンからダークグレーに変更 */
+}
+a {
+    text-decoration: none;
+    color: var(--text-hl-color); /* リンクをブルーに */
+}
+a:hover {
+    text-decoration: underline;
+}
+img {
+    max-width: 100%;
+    text-align: center;
+}
+
+/* レイアウト */
+.wrapper {
+    max-width: 1120px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+.align-center {
+    text-align: center;
+}
+
+/* 見出し */
+.font-english {
+    /* font-family: "Philosopher", sans-serif; */
+    font-weight: normal;
+}
+.page-title,
+.heading-large,
+.heading-medium {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--text-main-color);
+}
+.page-title {
+    margin-top: 2rem;
+    line-height: 1.4;
+    color: var(--text-main-color); /* カバー画像の上の文字は白に */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.heading-large {
+    margin-bottom: 1rem;
+}
+
+/* ボタン */
+.btn {
+    display: inline-block;
+    font-size: 1.25rem;
+    color: #fff;
+    border: 5px dashed var(--main-color);
+    padding: 0.75rem 2rem;
+    transition: 0.3s;
+}
+.btn:hover {
+    background-color: rgb(from var(--main-color) r g b / 0.5);
+    text-decoration: none;
+    color: #fff;
+}
+
+/* ヘッダー
+------------------------------- */
+.page-header {
+    padding-top: 1rem;
+}
+.logo-text {
+    font-size: 2rem;
+    color: var(--text-sub-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.logo-text:hover {
+    text-decoration: none;
+    color: var(--text-sub-color);
+}
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    font-size: 1.25rem;
+    list-style: none;
+}
+.main-nav a {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.main-nav a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* ヘッダーカバー画像
+------------------------------- */
+.cover {
+    background-color: var(--bg-color); /* 画像がない場合の代替色 */
+    background-size: contain;
+    background-position: center;
+    height: 600px;
+}
+.sub-cover {
+    background-color: var(--bg-color);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    margin-bottom: 4rem;
+}
+
+/* ※ 画像を用意する場合はここにPC等の背景画像のパスを指定します */
+/*
+.cover-home { background-image: url(../images/hero-home.jpg); }
+.cover-blog { background-image: url(../images/hero-blog.jpg); }
+.cover-works { background-image: url(../images/hero-works.jpg); }
+*/
+
+/* HOME (index)
+------------------------------- */
+.about {
+    max-width: 800px;
+    padding: 0 1.5rem;
+    margin: 4rem auto 4rem;
+}
+.about p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* BLOG (blog.html)
+------------------------------- */
+.post {
+    margin-bottom: 3rem;
+}
+.post-title {
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+.post-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+.post-cat {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+}
+.post-cat a {
+    color: #555;
+    background-color: #f1f3f5;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+}
+.post-cat a:hover {
+    background-color: #e9ecef;
+    text-decoration: none;
+}
+.post-date {
+    color: #888;
+    font-size: 0.875rem;
+}
+.post-thumbnail {
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+}
+.post p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.blog-contents img{
+    max-height: 400px;
+    max-width: 400px;
+}
+
+/* サイドバー */
+.side-menu {
+    list-style: none;
+    margin-bottom: 3rem;
+}
+.side-menu li {
+    border-bottom: 1px dashed var(--main-color);
+}
+.side-menu a {
+    color: var(--main-color);
+    display: block;
+    padding: 0.75rem 0;
+}
+.side-menu a:hover {
+    color: #007bff;
+    padding-left: 0.5rem;
+    transition: padding 0.3s;
+}
+
+/* WORKS (works.html)
+------------------------------- */
+.grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 4rem;
+}
+.item {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+.item:hover {
+    transform: translateY(-5px);
+}
+.item img {
+    aspect-ratio: 16/9; /* アプリのスクショが映えるように16:9に変更 */
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+}
+.item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+.item strong {
+    color: #222;
+    font-size: 1.1rem;
+}
+
+/* フッター
+------------------------------- */
+.page-footer {
+    background-color: var(--bg-color); /* ダークトーンの背景画像からシンプルなライトグレーに変更 */
+    padding-top: 4rem;
+    border-top: 1px dashed var(--main-color);
+}
+.page-footer .heading-large {
+    font-size: 2rem;
+}
+.info {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 0 1.5rem;
+    border-spacing: 0;
+}
+.info th,
+.info td {
+    border-bottom: 1px dashed var(--main-color);
+}
+.info th {
+    text-align: left;
+    font-weight: bold;
+    padding: 1rem;
+    color: var(--text-sub-color);
+    width: 30%;
+}
+.info td {
+    padding: 1rem 0;
+}
+.copyright {
+    background-color: #343a40;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 4rem;
+    color: #adb5bd;
+}
+
+/* デスクトップ版
+------------------------------- */
+@media (min-width: 800px) {
+    .page-title {
+        font-size: 4rem;
+    }
+    .heading-large {
+        font-size: 3rem;
+    }
+    .post-title {
+        font-size: 2.2rem;
+    }
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .blog-contents {
+        display: flex;
+        justify-content: space-between;
+    }
+    .post {
+        width: 70%;
+    }
+    .sidebar {
+        width: 25%;
+    }
+    .sidebar .heading-medium {
+        text-align: left;
+        margin-bottom: 1rem;
+        border-bottom: 2px dashed var(--main-color);
+        padding-bottom: 0.5rem;
+    }
+
+    .grid {
+        gap: 2.5rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
